@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro com CEP</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Cadastro de usuário</h1>
+    <p>Informe seus dados. O endereço será preenchido automaticamente pelo CEP.</p>
+
+    <form id="formCadastro">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" name="nome" autocomplete="name" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" autocomplete="email" required>
+
+      <div class="cep-linha">
+        <div>
+          <label for="cep">CEP</label>
+          <input type="text" id="cep" name="cep" inputmode="numeric"
+                 maxlength="9" placeholder="00000-000" autocomplete="postal-code" required>
+        </div>
+        <span id="statusCep" role="status" aria-live="polite"></span>
+      </div>
+
+      <label for="rua">Rua</label>
+      <input type="text" id="rua" name="rua" autocomplete="address-line1">
+
+      <label for="bairro">Bairro</label>
+      <input type="text" id="bairro" name="bairro">
+
+      <div class="duas-colunas">
+        <div>
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" name="cidade" autocomplete="address-level2">
+        </div>
+        <div>
+          <label for="estado">Estado</label>
+          <input type="text" id="estado" name="estado" maxlength="2" autocomplete="address-level1">
+        </div>
+      </div>
+
+      <div class="duas-colunas">
+        <div>
+          <label for="numero">Número</label>
+          <input type="text" id="numero" name="numero">
+        </div>
+        <div>
+          <label for="complemento">Complemento</label>
+          <input type="text" id="complemento" name="complemento">
+        </div>
+      </div>
+
+      <button type="submit">Salvar cadastro</button>
+      <p id="mensagem" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
